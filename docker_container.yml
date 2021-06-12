@@ -21,7 +21,7 @@
        state: present
    - name: Start the container
      docker_container:
-       name: rhegiapp
+       name: rhegiapplication
        image: "rhegisan/rhegiapp:{{DOCKER_TAG}}"
        state: started
        ports:
