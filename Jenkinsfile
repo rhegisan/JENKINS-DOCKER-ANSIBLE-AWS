@@ -12,7 +12,7 @@ pipeline{
 
 
     stages{
-        stage('MAVEN BUILD'){
+        stage('SOURCE CODE CLONING'){
             steps{
                 git 'https://github.com/rhegisan/JENKINS-DOCKER-ANSIBLE-AWS.git'
             }
