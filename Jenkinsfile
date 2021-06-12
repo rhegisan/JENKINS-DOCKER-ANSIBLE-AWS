@@ -12,7 +12,12 @@ pipeline{
 
 
     stages{
-        
+        stage('MAVEN BUILD'){
+            steps{
+                git 'https://github.com/rhegisan/JENKINS-DOCKER-ANSIBLE-AWS.git'
+            }
+        }
+       
         stage('MAVEN BUILD'){
             steps{
                sh "mvn clean package"
