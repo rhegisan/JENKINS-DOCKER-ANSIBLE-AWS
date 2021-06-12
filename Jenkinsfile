@@ -4,7 +4,6 @@ pipeline{
     
     tools {
     maven 'maven'
-     git 'Git'
     }
     
     environment {
@@ -33,8 +32,8 @@ pipeline{
         
         stage('PUSH IMAGE TO DOCKERHUB'){
             steps{
-                withCredentials([string(credentialsId: 'DockerHub', variable: 'docker-hub-pwd')]) {
-                sh "docker login -u rhegisan -p ${docker-hub-pwd}"
+                withCredentials([string(credentialsId: 'DockerHub', variable: 'docker_hub_pwd')]) {
+                sh "docker login -u rhegisan -p ${docker_hub_pwd}"
                 }
                 sh "docker push rhegisan/rhegiapp:${DOCKER_TAG}"
             }
