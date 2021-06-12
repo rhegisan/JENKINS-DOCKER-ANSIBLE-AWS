@@ -13,12 +13,6 @@ pipeline{
 
     stages{
         
-        stage('SCM CLONE'){
-            steps{
-               git 'https://github.com/rhegisan/Maven-Jenkins-Ansible-AWS.git'
-            }
-        }
-        
         stage('MAVEN BUILD'){
             steps{
                sh "mvn clean package"
